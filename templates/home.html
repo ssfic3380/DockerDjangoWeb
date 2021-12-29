@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+   <script src="{% static 'js/home.js' %}?after30"> </script>
+   <link rel="stylesheet" type="text/css" href="{% static 'css/css/home.css' %}?after16">
+
+   <div class="container-fluid" ondragover="allowDrop(event)" ondrop="dragDrop(event)">
+      <div class="row">
+         
+
+         <div class="col-sm-3 c2 c12">
+            <a href="/simpleweb/upload/" target="_blank">upload</a>
+            <h1 id="heading"><br>Operators
+            </h1><br>
+            
+            <a href="/simpleweb/userwork/">list</a>
+            <input type="text" value="default" id="processName" name="processName" required
+       minlength="4" maxlength="100" size="10">
+
+            <hr>
+
+            <div class="c1" id="operators">
+               <!--DB로부터 operator 이름들을 받아와서 버튼으로 쭉 보여줘야 함-->
+               <svg width="100%" height="100%" id="operatorsSVG">
+                  <!--
+                  <g>
+                     <rect x='5%' y='0' width='90%' height='50' rx='30' ry='30' style='fill:rgba(255, 255, 255, 1); stroke: rgba(0, 0, 0, 1); stroke-width: 2;'/>
+                     <text x='50%' y='25' font-size="15" font-weight="bold" dominant-baseline="middle" text-anchor="middle">LSTM</text> 
+                  </g>
+                  <g>
+                     <rect x='5%' y='70' width='90%' height='50' rx='30' ry='30' style='fill:rgba(255, 255, 255, 1); stroke: rgba(0, 0, 0, 1); stroke-width: 2;'/>
+                     <text x='50%' y='95' font-size="15" font-weight="bold" dominant-baseline="middle" text-anchor="middle">Long Long Long Long text</text>
+                  </g>
+                  -->
+                  
+               </svg>
+            </div>
+
+         </div>
+
+
+         <div class="col-sm-9 c3">
+
+            <h1 id="heading"><br>Drag your operators here<br>
+            <input id="start" type="button" class="btn btn-success" value="Start" href="/simpleweb/run"><br>
+            </h1>
+
+            <div id="process">
+               <svg width="100%" height="100%" id="processSVG">
+                  <g id="resultG">
+                     
+                  </g>
+               </svg>
+            </div>
+
+         </div>
+
+      </div>
+   </div>
+
+{% endblock %}

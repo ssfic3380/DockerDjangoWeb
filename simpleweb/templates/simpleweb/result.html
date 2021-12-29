@@ -1,0 +1,5 @@
+{% load static %}
+{% for image in images %}
+<li>{{image}}</li>
+<img  src={{MEDIA_URL}}result/{{middlepath}}/{{operator_path}}/{{image}} width="500px" height="500px">
+{% endfor %}
